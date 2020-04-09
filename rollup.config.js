@@ -3,8 +3,7 @@ export default {
     output: {
         file: "lib/index.umd.js",
         format: "umd",
-        name: "VueApolloDecorators",
-        exports: "named",
+        name: "SprintfFormatter",
         globals: {
             "sprintf-js": "window",
         },
