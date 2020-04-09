@@ -27,7 +27,7 @@ new Vue({
 or with `nuxt-i18n`:
 
 ``` js
-/* plugins/vueI18n.js */
+/* plugins/vue-i18n.js */
 
 import SprintfFormatter from "@/lang/SprintfFormatter";
 
@@ -47,7 +47,7 @@ export default {
         [
             "nuxt-i18n",
             {
-                vueI18n: "@/plugins/vueI18n.js",
+                vueI18n: "@/plugins/vue-i18n.js",
                 /* ... */
             },
         ],
