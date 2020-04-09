@@ -1,0 +1,41 @@
+{
+  "name": "vue-apollo-decorators",
+  "author": "Stefan Wimmer <info@stefanwimmer128.eu>",
+  "version": "1.0.0",
+  "description": "Use decorator to create Vue Apollo smart queries.",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "ISC",
+  "keywords": [
+    "vue",
+    "vue-i18n",
+    "sprintf"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanwimmer128/vue-apollo-decorators"
+  },
+  "scripts": {
+    "build": "npm-run-all clean compile bundle",
+    "clean": "rimraf lib",
+    "compile": "tsc",
+    "bundle": "rollup -c"
+  },
+  "dependencies": {
+    "sprintf-js": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/sprintf-js": "^1.1.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.3.4",
+    "typescript": "^3.8.3",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.16.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6",
+    "vue-i18n": "^8"
+  }
+}
