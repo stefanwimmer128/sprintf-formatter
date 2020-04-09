@@ -3,6 +3,7 @@
 ## Install
 
 ```bash
+yarn add sprintf-formatter
 npm i sprintf-formatter
 ```
 
