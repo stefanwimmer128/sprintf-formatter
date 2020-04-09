@@ -1,5 +1,5 @@
 {
-  "name": "vue-apollo-decorators",
+  "name": "sprintf-formatter",
   "author": "Stefan Wimmer <info@stefanwimmer128.eu>",
   "version": "1.0.0",
   "description": "Use decorator to create Vue Apollo smart queries.",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/stefanwimmer128/vue-apollo-decorators"
+    "url": "https://github.com/stefanwimmer128/sprintf-formatter"
   },
   "scripts": {
     "build": "npm-run-all clean compile bundle",
