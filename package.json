@@ -2,9 +2,10 @@
   "name": "sprintf-formatter",
   "author": "Stefan Wimmer <info@stefanwimmer128.eu>",
   "version": "1.0.1",
-  "description": "Use decorator to create Vue Apollo smart queries.",
-  "main": "lib/index.umd.js",
+  "description": "Sprintf Formatter - use sprintf for formating vue-i18n translations",
+  "main": "cjs/index.js",
   "module": "lib/index.js",
+  "browser": "dist/sprintf-formatter.min.js",
   "types": "lib/index.d.ts",
   "license": "ISC",
   "keywords": [
@@ -17,25 +18,54 @@
     "url": "https://github.com/stefanwimmer128/sprintf-formatter"
   },
   "scripts": {
-    "build": "npm-run-all clean compile bundle",
-    "clean": "rimraf lib",
-    "compile": "tsc",
-    "bundle": "rollup -c"
+    "build": "run-s build:clean build:compile build:test build:bundle",
+    "build:clean": "run-p build:clean:*",
+    "build:clean:lib": "rimraf lib",
+    "build:clean:cjs": "rimraf cjs",
+    "build:clean:dist": "rimraf dist",
+    "build:compile": "run-s build:compile:*",
+    "build:compile:lib": "tsc && babel lib -d lib --plugins lodash --no-comments -s",
+    "build:compile:cjs": "babel lib -d cjs --plugins @babel/transform-modules-commonjs -s",
+    "build:test": "mocha -r source-map-support/register \"cjs/**/*.test.js\"",
+    "build:bundle": "run-p build:bundle:*",
+    "build:bundle:development": "cross-env NODE_ENV=development rollup -c -o dist/sprintf-formatter.js",
+    "build:bundle:production": "cross-env NODE_ENV=production rollup -c -o dist/sprintf-formatter.min.js -p terser",
+    "dev": "nodemon -w src -e ts -x \"run-s build\""
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "sprintf-js": "^1.1.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@rollup/plugin-alias": "^3.1.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-replace": "^2.3.2",
+    "@types/chai": "^4.2.11",
+    "@types/lodash": "^4.14.152",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.5",
     "@types/sprintf-js": "^1.1.2",
+    "babel-plugin-lodash": "^3.3.4",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "fs-extra": "^9.0.0",
+    "lodash-es": "^4.17.15",
+    "mocha": "^7.1.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.3.4",
-    "typescript": "^3.8.3",
+    "rollup": "^2.10.7",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-sourcemaps": "^0.6.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "typescript": "^3.9.3",
     "vue": "^2.6.11",
-    "vue-i18n": "^8.16.0"
+    "vue-i18n": "^8.17.7"
   },
   "peerDependencies": {
-    "vue": "^2.6",
+    "vue": "^2",
     "vue-i18n": "^8"
   }
 }

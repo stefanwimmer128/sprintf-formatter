@@ -1,5 +1,7 @@
 # Sprintf Formatter
 
+Use [sprintf](https://github.com/alexei/sprintf.js/) for formating vue-i18n translations
+
 ## Install
 
 ```bash
