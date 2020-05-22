@@ -4,9 +4,13 @@ Use [sprintf](https://github.com/alexei/sprintf.js/) for formating vue-i18n tran
 
 ## Install
 
-```bash
+``` bash
 yarn add sprintf-formatter
 npm i sprintf-formatter
+```
+
+``` html
+<script src="https://unpkg.com/sprintf-formatter@2.0.1"></script>
 ```
 
 ## Usage
