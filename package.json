@@ -1,7 +1,7 @@
 {
   "name": "sprintf-formatter",
   "author": "Stefan Wimmer <info@stefanwimmer128.eu>",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Sprintf Formatter - use sprintf for formating vue-i18n translations",
   "main": "cjs/index.js",
   "module": "lib/index.js",
