@@ -35,7 +35,7 @@ or with `nuxt-i18n`:
 ``` js
 /* plugins/vue-i18n.js */
 
-import SprintfFormatter from "@/lang/SprintfFormatter";
+import SprintfFormatter from "sprintf-formatter";
 
 export default function vueI18n() {
     return {
